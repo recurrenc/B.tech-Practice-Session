@@ -22,7 +22,7 @@ const SelectionSort = (list) => {
         minIndex = j;
       }
     }
-    Swap(list, i, minIndex);
+    if (minIndex !== i) Swap(list, i, minIndex);
   }
   return list;
 };
