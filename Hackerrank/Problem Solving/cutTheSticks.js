@@ -1,3 +1,10 @@
+/*      -------------------------------
+       |      HACKERRANK SOLUTION      |
+        -------------------------------
+  Auther : Sonu Kumar (B.tech 2nd Year in 2020-2021)
+
+*/
+
 function cutTheSticks(arr) {
   let res = [];
   arr.sort((a, b) => a - b);
