@@ -26,5 +26,4 @@ const SelectionSort = (list) => {
   }
   return list;
 };
-
 console.log(SelectionSort([5, 8, 99, 123, 3, 6, 8, 55]));
