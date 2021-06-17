@@ -54,3 +54,4 @@ console.log(canSum(7, [5, 2, 2]).length);
 console.log(canSum(7, [5, 5, 2]).length);
 console.log(canSum(4, [2, 1, 1]).length);
 console.log(canSum(100, [23, 15, 50]).length);
+console.log(canSum(4000, [23, 15, 50]).length);
