@@ -6,7 +6,7 @@
   arg 1 : a number
   arg 2 : an array
 
-  returns an shortest array which elements is combination of elements 
+  returns an longest posible  array which elements is combination of elements 
   of given array and  whose sum is equal to given number.
 */
 
@@ -15,7 +15,6 @@ const canSum = (targetSum, numbers, memo = {}) => {
   if (targetSum in memo) {
     return memo[targetSum];
   }
-
   // Base cases of Recursion.
 
   if (targetSum === 0) {
@@ -28,7 +27,7 @@ const canSum = (targetSum, numbers, memo = {}) => {
 
   // logic of the problem statement
 
-  let shortestCombination = null;
+  let longestCombination = null;
 
   for (let num of numbers) {
     const remainder = targetSum - num;
@@ -37,18 +36,21 @@ const canSum = (targetSum, numbers, memo = {}) => {
     if (remainderCombination !== null) {
       const combination = [...remainderCombination, num];
       if (
-        shortestCombination === null ||
-        combination.length < shortestCombination.length
+        longestCombination === null ||
+        combination.length > longestCombination.length
       ) {
-        shortestCombination = combination;
+        longestCombination = combination;
       }
     }
   }
 
   // Storing key value in cache
-  memo[targetSum] = shortestCombination;
-  return shortestCombination;
+  memo[targetSum] = longestCombination;
+  return longestCombination;
 };
 
-console.log(canSum(51, [3, 5, 7]));
-console.log(canSum(50, [3, 5, 7]));
+console.log(canSum(5, [5, 3, 2]).length);
+console.log(canSum(7, [5, 2, 2]).length);
+console.log(canSum(7, [5, 5, 2]).length);
+console.log(canSum(4, [2, 1, 1]).length);
+console.log(canSum(100, [23, 15, 50]).length);
