@@ -5,24 +5,26 @@ class Stack {
   push(element) {
     this.items.push(element);
   }
-  // pop()
   pop() {
     if (this.items.length === 0) return "Underflow";
     return this.items.pop();
   }
-  // peek()
   peek() {
     return this.items[this.items.length - 1];
   }
-  // isEmpty()
   isEmpty() {
     return this.items.length == 0;
   }
-  // printStack()
   printStack() {
     var str = "";
     for (var i = 0; i < this.items.length; i++) str += this.items[i] + " ";
     return str;
+  }
+  contains(element) {
+    return this.items.includes(element);
+  }
+  size() {
+    return this.items.length;
   }
 }
 
